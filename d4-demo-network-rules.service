@@ -1,0 +1,12 @@
+[Unit]
+Description=D4 Demo iptables and routing rules for VPN server
+After=strongswan.service
+After=syslog.service
+
+[Service]
+ExecStart=/opt/cog/d4-vpn-setup/net_reset.sh
+StandardOutput=syslog
+Type=oneshot
+
+[Install]
+WantedBy=multi-user.target
